@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sample">
+	<test name="Sample_tests">
+		<parameter name="URL" value="amazon.com"/>
+		<classes>
+			<class name="testcases.sampleone"/>
+			<class name="testcases.sampletwo"/>
+		</classes>
+	</test>
+</suite> <!-- Suite --> 
