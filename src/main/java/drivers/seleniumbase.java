@@ -9,17 +9,20 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class seleniumbase {
+public class seleniumbase extends browserconfiguration {
 
 	public static WebDriver driver = null;
 	public  static String baseurl = "http://localhost:3000/";
-
+    
+	
+	
 	public void open(String url) {
 		try {
 			WebDriverManager.chromedriver().setup();
@@ -32,6 +35,7 @@ public class seleniumbase {
 			System.out.println("[FAILED] unable to launch the browser");
 		}
 	}
+	
 
 	public void close() {
 		try {
@@ -80,7 +84,6 @@ public class seleniumbase {
 		String[] split = locator.split("=", 2);
 		String key = split[0].toUpperCase();
 		String value = split[1];
-
 		if (key.equalsIgnoreCase("ID")) {
 			try {
 				driver.findElement(By.id(value)).click();
@@ -138,7 +141,6 @@ public class seleniumbase {
 		String[] split = locator.split("=", 2);
 		String key = split[0].toUpperCase();
 		String value = split[1];
-
 		if (key.equalsIgnoreCase("ID")) {
 			try {
 				driver.findElement(By.id(value)).sendKeys(data);
@@ -191,4 +193,21 @@ public class seleniumbase {
 			System.out.println("please provide the correct locator");
 		}
 	}
-	}
+}
+	
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
